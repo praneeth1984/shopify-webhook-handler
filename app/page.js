@@ -5,69 +5,77 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/social-orange-logo-v1.png" // replace with your WhatsApp logo
-          alt="WhatsApp Chat Logo"
-          width={80}
-          height={80}
-          priority
-        />
+        {/* Logo */}
+        <div className={styles.logoWrapper}>
+          <Image
+            src="/social-orange-logo-v1.png"
+            alt="WhatsApp Chat Logo"
+            width={90}
+            height={90}
+            priority
+          />
+        </div>
 
+        {/* Title */}
         <h1 className={styles.title}>
-          Welcome to <span style={{ color: "#25D366" }}>WhatsApp Chat</span> by{" "}
-          <span style={{ color: "#ff6600" }}>Social Orange</span>
+          Welcome to <span className={styles.green}>WhatsApp Chat</span> by{" "}
+          <span className={styles.orange}>Social Orange</span>
         </h1>
 
+        {/* Description */}
         <p className={styles.description}>
-          Connect with your customers instantly through WhatsApp.  
-          Increase sales, provide fast support, and build stronger trust with your shoppers.
+          Engage with your customers instantly on WhatsApp.  
+          Provide fast support, boost conversions, and build stronger trust.
         </p>
 
+        {/* Call to Actions */}
         <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/social-orange-logo-v1.png"
-              alt="WhatsApp icon"
-              width={20}
-              height={20}
-            />
+          <a className={styles.primary} href="#">
             Learn More
           </a>
           <a
             href="mailto:success@firstbridgeconsulting.com"
-            target="_blank"
-            rel="noopener noreferrer"
             className={styles.secondary}
           >
             Contact Support
           </a>
         </div>
 
-        <div className={styles.features}>
+        {/* Features */}
+        <section className={styles.features}>
+          <h2>Why Choose Us?</h2>
           <ul>
             <li>💬 Real-time WhatsApp support</li>
-            <li>📈 Boost conversions with instant replies</li>
-            <li>⚡ Easy setup in your Shopify store</li>
-            <li>🔒 Secure & reliable</li>
+            <li>📈 Boost sales with instant replies</li>
+            <li>⚡ Easy Shopify store integration</li>
+            <li>🔒 Secure & reliable solution</li>
           </ul>
+        </section>
+
+        {/* Screenshot */}
+        <div className={styles.screenshot}>
+          <Image
+            src="/screenshot-1.png"
+            alt="App Preview"
+            width={1000}
+            height={600}
+            className={styles.imageShadow}
+          />
         </div>
       </main>
 
+      {/* Footer */}
       <footer className={styles.footer}>
-        <a
-          href="https://firstbridgeconsulting.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by First Bridge Consulting
-        </a>
+        <p>
+          Powered by{" "}
+          <a
+            href="https://firstbridgeconsulting.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            First Bridge Consulting
+          </a>
+        </p>
       </footer>
     </div>
   );
