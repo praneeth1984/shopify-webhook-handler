@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -15,6 +16,19 @@ import {
 import { Chat, TrendingUp, FlashOn, Security } from "@mui/icons-material";
 
 export default function Home() {
+  // Handle Shopify OAuth installation
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const shop = params.get('shop');
+    const hmac = params.get('hmac');
+    
+    // If this is a Shopify install request, redirect to OAuth
+    if (shop && hmac) {
+      console.log('[Home] Detected install request, redirecting to /api/auth');
+      window.location.href = `/api/auth?${params.toString()}`;
+    }
+  }, []);
+
   return (
     <Box
       sx={{
